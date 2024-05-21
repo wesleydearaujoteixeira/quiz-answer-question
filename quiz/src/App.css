@@ -54,13 +54,20 @@
   align-items: center;
 }
 
+.TitleQuery {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
 
 
 .container {
   background-color: rgb(49, 120, 185);
   color: black;
-  height: 550px;
-  width: 900px;
+  height: 450px;
+  width: 600px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -69,6 +76,13 @@
   gap: 2rem;
   list-style-type: none;
   margin-top: 2rem;
+}
+
+
+.Image_Bruna {
+  width: 400px;
+  margin-top: 1rem;
+  border-radius: 10px;
 }
 
 
@@ -106,4 +120,82 @@
   background-color: rgba(202, 23, 23, 0.918);
   color: white;
   font-size: 1.7rem;
+}
+
+
+@media screen and (max-width: 800px) {
+
+  .TitleQuery {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .container {
+    background-color: rgb(49, 120, 185);
+    color: black;
+    height: 400px;
+    width: 350px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style-type: none;
+    margin-top: 2rem;
+  }
+  
+  .container > h1 {
+    font-size: 1.2rem;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    width: 60%;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+
+  .container > .correct {
+    background-color: rgb(22, 202, 118);
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  
+  }
+  
+  .container > .incorrect {
+    background-color: rgba(202, 23, 23, 0.918);
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .main > div > button {
+    background-color: rgb(14, 22, 61);
+    width: 80%;
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 5px black;
+    margin: auto;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+  .Image_Bruna {
+    width: 350px;
+    margin-top: 1rem;
+    border-radius: 10px;
+  }
+  
+
+
 }

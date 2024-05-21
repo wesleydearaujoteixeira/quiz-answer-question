@@ -21,6 +21,7 @@ export const questions_answers:  QuestionAnswers[] = [
                 ],
 
                 currect: 2,
+                
             },
 
             {

@@ -8,6 +8,7 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [initial, setInitial] = useState(false);
   const [lock, setLock] = useState(false);
+  const [loadImage, setLoadImage] = useState(false);
 
 
 
@@ -26,11 +27,13 @@ function App() {
             if(current === index && item) {
       
               item.classList.add('correct');
+              setLoadImage(true);
               setLock(true);
     
               setTimeout(() => {
                 setCurrentIndex(currentIndex + 1);
                 item.classList.remove('correct');
+                setLoadImage(false);
                 setLock(false);
               }, 5000);
       
@@ -57,10 +60,6 @@ function App() {
       }else {
         setCurrentIndex(0);
       }
-  
-    
-
-
    
   }
 
@@ -77,9 +76,14 @@ function App() {
       {currentQA  && initial ? (
 
         <>
-          <h1>{currentQA.title}</h1>
+          <div className='TitleQuery'>
+              <h1>{currentQA.title}</h1>
+              <h1> {currentIndex + 1} / {questions_answers.length} </h1>
+          </div>
 
-            <h1> {currentIndex + 1} / {questions_answers.length} </h1>
+            {loadImage && (
+              <img  className='Image_Bruna' src="https://planetsex.com.br/Img/conteudo/cenas/cena_selecionada/fotos/bruna-surfistinha-transando-de-verdade_926_5.jpg" alt="" />
+            )}
 
           <section className={initial == true? 'container' : 'default'}>
 
