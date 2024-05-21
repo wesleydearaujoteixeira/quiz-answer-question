@@ -1,68 +1,106 @@
 
 import { useState } from 'react'
 import './App.css'
-import { questios_answers} from './questions/quetions'
+import { questions_answers} from './questions/quetions'
 
 function App() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [initial, setInitial] = useState(false);
+  const [lock, setLock] = useState(false);
 
 
-  const [correct, setCorrect] = useState('');
+
+  const VerifyCondition = (index: number) => {
+      
+      if(currentIndex < questions_answers.length) {
 
 
-  const theNextQuestion = () => {
-
-    if(questios_answers.length > currentIndex && currentIndex === questios_answers.length - 2){
-      setCurrentIndex(0);
-    }
-    else {
-      setCurrentIndex(currentIndex + 1);
-    }
-    
-
-
-  };
+        const item = document.getElementById(String(index));
   
-  const getNumber = (n: number) => n;
+        document.getElementById(String(index))
+  
+        const current = questions_answers[currentIndex].currect
+  
+        if(lock == false) {
+            if(current === index && item) {
+      
+              item.classList.add('correct');
+              setLock(true);
+    
+              setTimeout(() => {
+                setCurrentIndex(currentIndex + 1);
+                item.classList.remove('correct');
+                setLock(false);
+              }, 5000);
+      
+          }
+          
+  
+        else {
+          item?.classList.add('incorrect');
+          setLock(true);
 
-  const VerifyCondition = (e: React.MouseEvent <HTMLDivElement>, num: number, index: number) => {
+  
+          setTimeout(() => {
+            setCurrentIndex(currentIndex + 1);
+            item?.classList.remove('incorrect');
+            setLock(false);
+          }, 5000);
+        
+        }
 
-    if(num === index) {
-      console.log(e.currentTarget.classList.add('correct'));
-    }else {
-      alert('não acertou');
-    }
+        }
 
+       
+  
+      }else {
+        setCurrentIndex(0);
+      }
+  
     
 
+
+   
   }
 
+  const handleState = () => {
+    setCurrentIndex(0);
+    setInitial(true);
+  }
 
+  const currentQA = questions_answers[currentIndex];
 
   return (
-    <>
-      <div className='main'>
+    <div className='main'>
 
-      <h1>{questios_answers[currentIndex].title}</h1>
+      {currentQA  && initial ? (
 
-        <section className='container'>
-          {questios_answers[currentIndex].questions.map((item, index) => {
+        <>
+          <h1>{currentQA.title}</h1>
 
-            const numero = questios_answers[currentIndex].currect
-            
-            getNumber(numero);
+            <h1> {currentIndex + 1} / {questions_answers.length} </h1>
 
-            getNumber(numero);
-            console.log(numero)
-            return <h1 className={correct} onClick={(e) => VerifyCondition(e, numero, index)} > {item} </h1>
-            
-          })}
-          <div><button onClick={() => theNextQuestion()}> Próximo </button></div>
-        </section>
-      </div>
-    </>
-  )
+          <section className={initial == true? 'container' : 'default'}>
+
+            {initial && (
+              currentQA.questions.map((item, index) => (
+                <h1 key={index} id={String(index)} onClick={() => VerifyCondition(index)}>
+                  {item}
+                </h1>
+              ))
+
+            )}
+
+          </section>
+        </>
+      ) : (
+        <div>
+          <button onClick={() => handleState()} > Iniciar o Quiz? </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App

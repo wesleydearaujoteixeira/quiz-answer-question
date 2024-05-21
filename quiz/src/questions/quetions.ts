@@ -6,7 +6,7 @@ export type QuestionAnswers = {
 }
 
 
-export const questios_answers:  QuestionAnswers[] = [
+export const questions_answers:  QuestionAnswers[] = [
   
 
             {
@@ -20,7 +20,7 @@ export const questios_answers:  QuestionAnswers[] = [
                     ' d) Japão', 
                 ],
 
-                currect: 2
+                currect: 2,
             },
 
             {
