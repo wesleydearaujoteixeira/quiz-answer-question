@@ -1,7 +1,11 @@
 
-import { useState } from 'react'
-import './App.css'
-import { questions_answers} from './questions/quetions'
+import { useState } from 'react';
+import './styles/App.css';
+import './styles/responsive.css';
+
+import { questions_answers} from './questions/quetions';
+import { LoadInfo } from './components/LoadInfo';
+
 
 function App() {
 
@@ -10,12 +14,14 @@ function App() {
   const [lock, setLock] = useState(false);
   const [loadImage, setLoadImage] = useState(false);
 
+  const [image, setImage] = useState('');
+  const [title, setTitle] = useState('');
+
 
 
   const VerifyCondition = (index: number) => {
       
       if(currentIndex < questions_answers.length) {
-
 
         const item = document.getElementById(String(index));
   
@@ -24,38 +30,38 @@ function App() {
         const current = questions_answers[currentIndex].currect
   
         if(lock == false) {
+
             if(current === index && item) {
       
               item.classList.add('correct');
               setLoadImage(true);
               setLock(true);
+
+              setImage(questions_answers[currentIndex].image);
+              setTitle(questions_answers[currentIndex].description);
     
               setTimeout(() => {
                 setCurrentIndex(currentIndex + 1);
                 item.classList.remove('correct');
                 setLoadImage(false);
                 setLock(false);
-              }, 5000);
-      
+              }, 7000);
           }
           
-  
         else {
           item?.classList.add('incorrect');
           setLock(true);
-
+          alert(" Você errou! ");
   
           setTimeout(() => {
             setCurrentIndex(currentIndex + 1);
             item?.classList.remove('incorrect');
             setLock(false);
-          }, 5000);
+          }, 1000);
         
         }
 
         }
-
-       
   
       }else {
         setCurrentIndex(0);
@@ -72,9 +78,7 @@ function App() {
 
   return (
     <div className='main'>
-
       {currentQA  && initial ? (
-
         <>
           <div className='TitleQuery'>
               <h1>{currentQA.title}</h1>
@@ -82,7 +86,7 @@ function App() {
           </div>
 
             {loadImage && (
-              <img  className='Image_Bruna' src="https://planetsex.com.br/Img/conteudo/cenas/cena_selecionada/fotos/bruna-surfistinha-transando-de-verdade_926_5.jpg" alt="" />
+              <LoadInfo img={image} text={title} />
             )}
 
           <section className={initial == true? 'container' : 'default'}>
@@ -92,12 +96,11 @@ function App() {
                 <h1 key={index} id={String(index)} onClick={() => VerifyCondition(index)}>
                   {item}
                 </h1>
-              ))
-
-            )}
+              )))}
 
           </section>
         </>
+
       ) : (
         <div>
           <button onClick={() => handleState()} > Iniciar o Quiz? </button>
