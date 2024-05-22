@@ -137,6 +137,38 @@ export const questions_answers:  QuestionAnswers[] = [
                 description: ' A queda da Bastilha marcou o início da queda do antigo regime e a ascensão das ideias de liberdade, igualdade e fraternidade.'
                 
             },
+
+            {
+                id: 10, 
+                title: "Porque os EUA criou o Projeto Manhattan?",
+                questions: [
+                     'a) Fiscalizar e destruir espiões soviéticos',
+                     'b) Desenvolver a Bomba atômica',
+                     'c) Construir uma base militar em Cuba',
+                     'd) Tecnologia usada pra extrair petróleo', 
+                ],
+
+                currect: 1,
+                image: 'https://escolaeducacao.com.br/wp-content/uploads/2020/11/projeto-manhattan-1.jpg',
+                description: 'O Projeto Manhattan foi o projeto desenvolvido pelos Estados Unidos da América com a finalidade de construir as primeiras bombas atômicas da história.'
+                
+            },
+
+            {
+                id: 11, 
+                title: "Qual o último Jogador Brasileiro a ser Melhor do Mundo no ano?",
+                questions: [
+                     'a) Ronaldo',
+                     'b) Ronaldinho',
+                     'c) Luis Fabiano',
+                     'd) Kaká', 
+                ],
+
+                currect: 3,
+                image: 'https://www.lance.com.br/galerias/wp-content/uploads/2022/04/kaka-melhro-do-mundo-2007_Easy-Resize.com_-625x474.jpg',
+                description: 'Após ser campeão da Champions League e do Mundial de Clubes, em 2007 Kaká foi considerado o melhor do mundo pela FIFA'
+                
+            },
             
     
 ]
