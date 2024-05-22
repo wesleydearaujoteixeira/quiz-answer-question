@@ -57,7 +57,7 @@ function App() {
             setCurrentIndex(currentIndex + 1);
             item?.classList.remove('incorrect');
             setLock(false);
-          }, 1000);
+          }, 2000);
         
         }
 

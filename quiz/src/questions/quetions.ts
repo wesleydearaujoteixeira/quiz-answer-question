@@ -106,6 +106,37 @@ export const questions_answers:  QuestionAnswers[] = [
                 description: ' o James Webb é otimizado para observações no infravermelho. Isso permite que ele veja galáxias e estrelas através de nuvens de poeira interestelar'
 
             },
+
+            {
+                id: 8, 
+                title: "O que é a lei de Coulomb e onde ela é usado?",
+                questions: [
+                     'a) Uma lei da termodinâmica',
+                     'b) Usado p/calcular a densidade da massa de um corpo',
+                     'c) força de atração ou repulsão',
+                     'd) Uma fórmula pra calcular a circunferência.', 
+                ],
+
+                currect: 2,
+                image: 'https://i0.wp.com/fisicaparaoenem.com/wp-content/uploads/_pda/2021/05/002-Lei-de-Coulomb.png?fit=1920%2C1080&ssl=1',
+                description: ' A lei de Coulomb descreve a força de atração ou repulsão entre duas cargas elétricas pontuais. '
+
+            },
+            {
+                id: 9, 
+                title: "Qual evento é considerado o marco inicial da Revolução Francesa?",
+                questions: [
+                     'a) A tomada da Bastilha',
+                     'b) A Declaração dos Direitos do Homem e do Cidadão',
+                     'c) A morte de Luis XVI',
+                     'd)  A Convenção Nacional', 
+                ],
+
+                currect: 0,
+                image: 'https://static.historiadomundo.com.br/2021/05/revolucao-francesa.jpg',
+                description: ' A queda da Bastilha marcou o início da queda do antigo regime e a ascensão das ideias de liberdade, igualdade e fraternidade.'
+                
+            },
             
     
 ]

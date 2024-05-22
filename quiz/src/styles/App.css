@@ -64,10 +64,10 @@
 
 
 .container {
-  background-color: rgb(49, 120, 185);
+  background-image: linear-gradient(to bottom, rgb(10, 51, 184), rgb(16, 16, 65));
   color: black;
   height: 550px;
-  width: 600px;
+  width: 800px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -76,6 +76,8 @@
   gap: 2rem;
   list-style-type: none;
   margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 10px 10px 20px black;
 }
 
 
@@ -124,7 +126,8 @@
 
 
 .container > .correct {
-  background-color: rgb(22, 202, 118);
+  background-image:linear-gradient( to right, rgb(34, 187, 34), rgb(24, 65, 24));
+  border: 1px solid white;
   font-size: 1.7rem;
   color: white;
   border-radius: 10px;
@@ -133,7 +136,8 @@
 }
 
 .container > .incorrect {
-  background-color: rgba(202, 23, 23, 0.918);
+  background-image:linear-gradient( to right, rgb(230, 14, 14), rgb(95, 21, 21));
+  border: 1px solid white;
   color: white;
   font-size: 1.7rem;
 }
